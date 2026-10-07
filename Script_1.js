@@ -10,7 +10,21 @@ let delay_time = 4000;
 //Helper functions, and reminder of different methods to hide elements
 function error_msg(){
     error.style.display="block";
+    interval_time = 0;
+    countdown_reset_tracker = setInterval(update_countdown, 1000);
 }
+
+function update_countdown(){
+    interval_time++;
+    let sec_delay = delay_time / 1000;
+    countdown.textContent = (delay_time / 1000) - interval_time;
+    if (interval_time >= sec_delay){
+        clearInterval(countdown_reset_timer);
+        countdown.textContent="";
+    }
+        
+}
+
 function error_over(){
     error.style.display="none";
 }
@@ -26,5 +40,10 @@ window.addEventListener("keydown", function (event) {
         arrow.src="down.jpg";
     else{
         error_msg();
+        error_reset_tracker = setTimeout(error_over, delay_time);
     }
+});
+
+error.addEventListener("click", function (event) {
+    clearTimeout(error_reset_tracker);
 });
