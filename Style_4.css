@@ -1,0 +1,29 @@
+body {
+    font-size:28px;
+    text-align: center;
+    font-family: "Lucida Console", "Courier New", monospace;
+    background-color: darkgray;
+}
+
+button{
+    font-size:28px;
+}
+
+img{
+    width: 250px;
+}
+
+.red{
+    color:red;
+}
+.blue{
+    background-color: lightblue;
+}
+.yellow{
+    border: 5px ridge yellow;
+    border-radius: 5px;
+    padding: 5px;
+}
+.green{
+    text-shadow: 4px 4px 5px green;
+}
